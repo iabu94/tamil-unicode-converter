@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unicode converter</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-fluid">
+        <h3>Tamil Unicode Converter</h3>
+        <span class="TableText"> Thanglish </span>
+        <div class="row">
+          <textarea
+            id="textArea0"
+            class="form-control"
+            onkeyup="convertToUnicode();convertToBamini();"
+            onclick="convertToUnicode();convertToBamini();"
+            onselect="convertToUnicode();convertToBamini();"
+            name="textArea0"
+            rows="10"
+          ></textarea>
+          <div class="row" id="button-group">
+            <a
+              class="btn btn-info col-md-2"
+              onclick="showLettersTable()"
+              href="#"
+              role="button"
+            >
+              View Charectors
+            </a>
+            &nbsp;
+            <button class="btn btn-warning col-md-1">Reset</button> &nbsp;
+            <button
+              class="btn btn-primary col-md-1"
+              onclick="copyit('textArea0');"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+        <br />
+        <span class="TableText">
+          Unicode (<font face="Arial">யுனிகோட்</font>)
+        </span>
+        <div class="row">
+          <textarea
+            id="textArea1"
+            class="form-control"
+            onkeyup="convertToBamini();"
+            onclick="convertToBamini();"
+            onselect="convertToBamini();"
+            name="textArea1"
+            rows="10"
+          ></textarea>
+          <div class="row" id="button-group">
+            <button class="btn btn-warning col-md-1">Reset</button> &nbsp;
+            <button
+              class="btn btn-primary col-md-1"
+              onclick="copyit('textArea1');"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+        <br />
+        <span class="TableText">
+          Bamini (<font face="Bamini">ghkpdp</font>)
+        </span>
+        <div class="row">
+          <textarea
+            id="textArea2"
+            name="textArea2"
+            class="form-control"
+            rows="10"
+          ></textarea>
+          <div class="row" id="button-group">
+            <br />
+            <button class="btn btn-warning col-md-1">Reset</button>
+            &nbsp;
+            <button
+              class="btn btn-primary col-md-1"
+              onclick="copyit('textArea2');"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="letters-table">
+      <table class="table table-bordered">
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ஃ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">அ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஆ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">இ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஈ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">உ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஊ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">எ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஏ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஐ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஒ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஓ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஔ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">க்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">க</td>
+          <td style="border: 1px solid #ddd; padding: 8px">கா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">கி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">கீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">கு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">கூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">கெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">கே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">கை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">கொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">கோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">கௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ங்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ங</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஙா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஙி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஙீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஙு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஙூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஙெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஙே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஙை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஙொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஙோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஙௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ச்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ச</td>
+          <td style="border: 1px solid #ddd; padding: 8px">சா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">சி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">சீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">சு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">சூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">செ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">சே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">சை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">சொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">சோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">சௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ஞ்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஞௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ட்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ட</td>
+          <td style="border: 1px solid #ddd; padding: 8px">டா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">டி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">டீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">டு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">டூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">டெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">டே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">டை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">டொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">டோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">டௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ண்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ண</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ணா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ணி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ணீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ணு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ணூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ணெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ணே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ணை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ணொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ணோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ணௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">த்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">த</td>
+          <td style="border: 1px solid #ddd; padding: 8px">தா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">தி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">தீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">து</td>
+          <td style="border: 1px solid #ddd; padding: 8px">தூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">தெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">தே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">தை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">தொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">தோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">தௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ந்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ந</td>
+          <td style="border: 1px solid #ddd; padding: 8px">நா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">நி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">நீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">நு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">நூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">நெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">நே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">நை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">நொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">நோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">நௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ப்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ப</td>
+          <td style="border: 1px solid #ddd; padding: 8px">பா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">பி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">பீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">பு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">பூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">பெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">பே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">பை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">பொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">போ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">பௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ம்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ம</td>
+          <td style="border: 1px solid #ddd; padding: 8px">மா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">மி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">மீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">மு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">மூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">மெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">மே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">மை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">மொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">மோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">மௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ய்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ய</td>
+          <td style="border: 1px solid #ddd; padding: 8px">யா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">யி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">யீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">யு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">யூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">யெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">யே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">யை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">யொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">யோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">யௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ர்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ர</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ரா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ரி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ரீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ரு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ரூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ரெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ரே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ரை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ரொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ரோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ரௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ல்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ல</td>
+          <td style="border: 1px solid #ddd; padding: 8px">லா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">லி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">லீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">லு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">லூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">லெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">லே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">லை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">லொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">லோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">லௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">வ்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">வௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ழ்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ழௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ள்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ள</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ளா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ளி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ளீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ளு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ளூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ளெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ளே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ளை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ளொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ளோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ளௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ற்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ற</td>
+          <td style="border: 1px solid #ddd; padding: 8px">றா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">றி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">றீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">று</td>
+          <td style="border: 1px solid #ddd; padding: 8px">றூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">றெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">றே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">றை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">றொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">றோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">றௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ன்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ன</td>
+          <td style="border: 1px solid #ddd; padding: 8px">னா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">னி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">னீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">னு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">னூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">னெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">னே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">னை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">னொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">னோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">னௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ஜ்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஜௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ஷ்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஷௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ஸ்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஸௌ</td>
+        </tr>
+        <tr scope="row">
+          <td style="border: 1px solid #ddd; padding: 8px">ஹ்</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹா</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹி</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹீ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹு</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹூ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹெ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹே</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹை</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹொ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹோ</td>
+          <td style="border: 1px solid #ddd; padding: 8px">ஹௌ</td>
+        </tr>
+      </table>
+    </div>
+
+    <script src="converter.js"></script>
+  </body>
+</html>
