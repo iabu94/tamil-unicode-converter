@@ -967,6 +967,10 @@ function copyit(elementId) {
   document.execCommand("copy");
 }
 
+function resetArea(elementId) {
+  document.getElementById(elementId).value = "";
+}
+
 function showLettersTable() {
   var win = window.open(
     "",
@@ -979,7 +983,12 @@ function showLettersTable() {
       ",top=0,left=" +
       screen.width
   );
+
+  win.document.write(
+    '<html><head><title>Letters Table</title><link rel="stylesheet" href="bootstrap.min.css" /></head><body>'
+  );
   win.document.body.innerHTML = document.getElementById(
     "letters-table"
   ).innerHTML;
+  win.document.write("</body></html>");
 }
