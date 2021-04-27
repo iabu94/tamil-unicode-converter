@@ -1003,4 +1003,12 @@ function counter_fn() {
     localStorage.setItem("counter", cnt + 1);
   }
   console.log("Total hits " + localStorage.getItem("counter"));
+
+  var sCnt = parseInt(sessionStorage.getItem("counter"));
+  if (Object.is(sCnt, NaN)) {
+    sessionStorage.setItem("counter", 1);
+  } else {
+    sessionStorage.setItem("counter", sCnt + 1);
+  }
+  console.log("Total hits (S) " + sessionStorage.getItem("counter"));
 }
