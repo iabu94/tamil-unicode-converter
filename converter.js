@@ -992,3 +992,15 @@ function showLettersTable() {
   ).innerHTML;
   win.document.write("</body></html>");
 }
+
+window.onload = counter_fn;
+
+function counter_fn() {
+  var cnt = parseInt(localStorage.getItem("counter"));
+  if (Object.is(cnt, NaN)) {
+    localStorage.setItem("counter", 1);
+  } else {
+    localStorage.setItem("counter", cnt + 1);
+  }
+  console.log("Total hits " + localStorage.getItem("counter"));
+}
