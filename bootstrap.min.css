@@ -67,10 +67,6 @@
   justify-content: flex-end;
 }
 
-#letters-table {
-  display: none;
-}
-
 td {
   border: 1px solid #ddd;
   padding: 8px;
